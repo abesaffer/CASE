@@ -1,212 +1,407 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CASE | State Advocacy Management Portal</title>
+
 <style>
 :root {
-  --red:#ae1730;
-  --dark-red:#811329;
-  --text:#24313b;
-  --muted:#56636d;
-  --border:#dfdfe2;
-  --background:#f5f5f5;
+  --case-red: #A71930;
+  --case-dark: #821126;
+  --text: #263442;
+  --muted: #617080;
+  --border: #dedfe3;
+  --background: #f5f5f6;
 }
-* { box-sizing:border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  background:var(--background);
-  color:var(--text);
-  font:16px/1.5 Arial,Helvetica,sans-serif;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
 }
-button,input,textarea,select { font:inherit; }
-button { cursor:pointer; }
-button:focus-visible,input:focus-visible,
-textarea:focus-visible,select:focus-visible {
-  outline:3px solid #e8a3af;
-  outline-offset:2px;
+
+button, input, select, textarea {
+  font: inherit;
 }
-a { color:var(--red); }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--case-red);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #e8a4b0;
+  outline-offset: 2px;
+}
+
+/* HEADER */
+
 header {
-  background:#fff;
-  border-bottom:4px solid var(--red);
+  background: #fff;
+  border-bottom: 4px solid var(--case-red);
 }
+
 .header-inner {
-  max-width:1100px;
-  margin:auto;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
 }
-.logo { max-width:200px; max-height:80px; object-fit:contain; }
-nav { display:flex; gap:22px; font-weight:bold; }
-nav a { text-decoration:none; }
-.wrap { max-width:1100px; margin:auto; padding:16px 18px 46px; }
+
+.logo {
+  max-width: 200px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+/* MAIN PAGE */
+
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px 18px 46px;
+}
+
 .hero {
-  background:var(--red);
-  color:white;
-  padding:25px 28px;
-  border-radius:9px;
-  margin-bottom:5px;
+  background: var(--case-red);
+  color: white;
+  padding: 25px 28px;
+  border-radius: 9px;
+  margin-bottom: 5px;
 }
-.hero h1 { margin:6px 0; font-size:30px; line-height:1.2; }
-.hero p { margin:0; max-width:800px; }
+
+.hero h1 {
+  margin: 6px 0;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 800px;
+}
+
 .eyebrow {
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
+
 .status {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:13px 18px;
-  margin-bottom:5px;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:12px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 18px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
-.status strong { color:var(--red); }
+
+.status strong {
+  color: var(--case-red);
+}
+
+/* CONTENT BOXES */
+
 .panel {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:9px;
-  padding:22px 26px;
-  margin-bottom:5px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 22px 26px;
+  margin-bottom: 5px;
 }
+
 .panel h2 {
-  color:var(--red);
-  font-size:21px;
-  font-weight:800;
-  margin:0 0 8px;
+  color: var(--case-red);
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0 0 8px;
 }
-.panel h3 { font-size:17px; margin:0 0 8px; }
-.panel p { margin:0 0 13px; }
+
+.panel h3 {
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+.panel p {
+  margin: 0 0 13px;
+}
+
 .columns {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
 }
-.tile { display:flex; flex-direction:column; align-items:flex-start; }
-.tile p { flex:1; }
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tile p {
+  flex: 1;
+}
+
+/* BUTTONS */
+
 .btn {
-  display:inline-block;
-  background:var(--red);
-  color:white;
-  border:2px solid var(--red);
-  border-radius:6px;
-  padding:10px 17px;
-  font-size:14px;
-  font-weight:800;
-  line-height:1.25;
+  display: inline-block;
+  background: var(--case-red);
+  color: white;
+  border: 2px solid var(--case-red);
+  border-radius: 6px;
+  padding: 10px 17px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.25;
 }
-.btn:hover { background:var(--dark-red); }
-.outline { color:var(--red); background:white; }
-.outline:hover { background:#faf1f3; }
-.actions { display:flex; flex-wrap:wrap; gap:9px; }
+
+.btn:hover {
+  background: var(--case-dark);
+}
+
+.btn-outline {
+  color: var(--case-red);
+  background: white;
+}
+
+.btn-outline:hover {
+  background: #faf1f3;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
 .label {
-  display:block;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-  margin:2px 0 12px;
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  margin: 2px 0 12px;
 }
+
+/* FORMS */
+
 .notice {
-  border-left:4px solid var(--red);
-  background:#f9f2f4;
-  padding:12px 16px;
-  font-size:14px;
-  margin:12px 0 18px;
+  border-left: 4px solid var(--case-red);
+  background: #f9f2f4;
+  padding: 12px 16px;
+  font-size: 14px;
+  margin: 12px 0 18px;
 }
-.field { margin-bottom:17px; }
+
+.field {
+  margin-bottom: 17px;
+}
+
 .field label {
-  display:block;
-  font-weight:bold;
-  margin-bottom:5px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
-.field input,.field textarea,.field select {
-  display:block;
-  width:100%;
-  padding:10px;
-  border:1px solid #abb4bd;
-  border-radius:5px;
-  background:white;
-  color:var(--text);
+
+.field input,
+.field textarea,
+.field select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #abb4bd;
+  border-radius: 5px;
+  background: white;
+  color: var(--text);
 }
-.field textarea { min-height:112px; resize:vertical; }
-.help { font-size:13px; color:var(--muted); margin-top:5px; }
-.section { display:none; }
-.section.active { display:block; }
+
+.field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.help {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* NAVIGATION BETWEEN SECTIONS */
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
 .back {
-  border:0;
-  background:transparent;
-  color:var(--red);
-  font-weight:bold;
-  padding:10px 0;
+  border: 0;
+  background: transparent;
+  color: var(--case-red);
+  font-weight: bold;
+  padding: 10px 0;
 }
-.entries { list-style:none; padding:0; margin:0; }
+
+.entries {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .entries li {
-  padding:13px 0;
-  border-bottom:1px solid var(--border);
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
 }
+
+/* PUBLIC PAGE PREVIEW */
+
 .preview-head {
-  background:var(--red);
-  color:white;
-  padding:21px;
-  border-radius:7px 7px 0 0;
+  background: var(--case-red);
+  color: white;
+  padding: 21px;
+  border-radius: 7px 7px 0 0;
 }
-.preview-head h3 { font-size:23px; margin:6px 0; }
+
+.preview-head h3 {
+  font-size: 23px;
+  margin: 6px 0;
+}
+
 .preview-body {
-  border:1px solid var(--border);
-  border-top:0;
-  padding:21px;
+  border: 1px solid var(--border);
+  border-top: 0;
+  padding: 21px;
 }
-.preview-body h4 { color:var(--red); margin:20px 0 5px; }
-.preserve { white-space:pre-wrap; overflow-wrap:anywhere; }
-#feedback { margin-top:10px; }
+
+.preview-body h4 {
+  color: var(--case-red);
+  margin: 20px 0 5px;
+}
+
+.preserve {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#feedback {
+  margin-top: 10px;
+}
+
 footer {
-  text-align:center;
-  padding:25px;
-  font-size:12px;
-  color:var(--muted);
+  text-align: center;
+  padding: 25px;
+  font-size: 12px;
+  color: var(--muted);
 }
-@media(max-width:680px) {
-  .columns { grid-template-columns:1fr; }
-  .header-inner { padding:10px 15px; }
-  .logo { max-width:130px; }
-  nav { gap:10px; font-size:13px; }
-  .wrap { padding:10px; }
-  .hero { padding:20px; }
-  .hero h1 { font-size:25px; }
-  .panel { padding:18px; }
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    max-width: 130px;
+  }
+
+  nav {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .wrap {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
 }
 </style>
 </head>
+
 <body>
+
+<!-- HEADER -->
 
 <header>
   <div class="header-inner">
-    <img class="logo" src="CASE_Horizontal_Color.jpg" alt="CASE">
+
+    <img
+      class="logo"
+      src="CASE_Horizontal_Color.jpg"
+      alt="Council of Administrators of Special Education">
+
     <nav aria-label="Main navigation">
-      <a href="https://casecec.quorum.us/">Home</a>
       <a href="https://www.casecec.org/">CASE</a>
+      <a href="#" onclick="event.preventDefault(); showPage('home');">
+        Home
+      </a>
     </nav>
+
   </div>
 </header>
 
 <main class="wrap">
+
+  <!-- TITLE -->
+
   <div class="hero">
-    <div class="eyebrow">CASE Legislative Action Center</div>
+    <div class="eyebrow">
+      CASE Legislative Action Center
+    </div>
+
     <h1>State Advocacy Management Portal</h1>
-    <p>Manage your state's advocacy information, share resources,
-    and work with CASE national on legislative priorities and
-    grassroots campaigns.</p>
+
+    <p>
+      Manage your state's advocacy information, share resources,
+      and work with CASE national on legislative priorities
+      and grassroots campaigns.
+    </p>
   </div>
 
   <div class="status">
@@ -215,131 +410,249 @@ footer {
     <span>Sample Account</span>
   </div>
 
+  <!-- DASHBOARD -->
+
   <section id="home" class="section active">
+
     <div class="panel">
       <h2>Welcome to Your State Advocacy Page</h2>
-      <p>Use this portal to keep your state's advocacy information
-      current. Routine information can be published directly.
-      Legislative positions and grassroots campaigns require CASE
-      national approval.</p>
+
+      <p>
+        Use this portal to keep your state's advocacy
+        information current. Routine information can be
+        published directly. Legislative positions and
+        grassroots campaigns require CASE national approval.
+      </p>
+
       <div class="actions">
-        <button class="btn" data-page="edit">Edit Your State Page</button>
-        <button class="btn outline" data-page="preview">
+
+        <button class="btn"
+          onclick="showPage('edit')">
+          Edit Your State Page
+        </button>
+
+        <button class="btn btn-outline"
+          onclick="showPage('preview')">
           Preview Public Page
         </button>
+
       </div>
     </div>
 
     <div class="columns">
+
       <div class="panel tile">
         <h2>State Page Content</h2>
-        <p>Update advocacy priorities, state news, announcements,
-        and state leadership contacts.</p>
-        <span class="label">Routine content · Publish directly</span>
-        <button class="btn" data-page="edit">Edit State Page</button>
+
+        <p>
+          Update advocacy priorities, state news,
+          announcements, and state leadership contacts.
+        </p>
+
+        <span class="label">
+          Routine content — Publish directly
+        </span>
+
+        <button class="btn"
+          onclick="showPage('edit')">
+          Edit State Page
+        </button>
       </div>
 
       <div class="panel tile">
         <h2>Events and Resources</h2>
-        <p>Post training opportunities, state meetings,
-        and resources for special education administrators.</p>
-        <span class="label">Routine content · Publish directly</span>
-        <button class="btn" data-page="resources">
+
+        <p>
+          Post training opportunities, state meetings,
+          and resources for special education administrators.
+        </p>
+
+        <span class="label">
+          Routine content — Publish directly
+        </span>
+
+        <button class="btn"
+          onclick="showPage('resources')">
           Add an Event or Resource
         </button>
       </div>
 
       <div class="panel tile">
         <h2>Legislative Positions</h2>
-        <p>Request CASE national review of proposed positions
-        on state bills and other policy proposals.</p>
-        <span class="label">CASE national approval required</span>
-        <button class="btn" data-page="positions">
+
+        <p>
+          Request CASE national review of proposed positions
+          on state bills and policy proposals.
+        </p>
+
+        <span class="label">
+          CASE national approval required
+        </span>
+
+        <button class="btn"
+          onclick="showPage('positions')">
           Request a Position Review
         </button>
       </div>
 
       <div class="panel tile">
         <h2>Grassroots Campaigns</h2>
-        <p>Propose a campaign to contact policymakers
-        or mobilize state members through Quorum.</p>
-        <span class="label">CASE national approval required</span>
-        <button class="btn" data-page="campaigns">
+
+        <p>
+          Propose campaigns to contact policymakers
+          or mobilize state members through Quorum.
+        </p>
+
+        <span class="label">
+          CASE national approval required
+        </span>
+
+        <button class="btn"
+          onclick="showPage('campaigns')">
           Propose a Campaign
         </button>
       </div>
+
     </div>
 
     <div class="columns">
+
       <div class="panel">
         <h2>Pending National Review</h2>
-        <p id="pending-summary">No requests pending.</p>
-        <button class="btn outline" data-page="requests">
+
+        <p id="pending-summary">
+          No requests pending.
+        </p>
+
+        <button class="btn btn-outline"
+          onclick="showPage('requests')">
           View Submitted Requests
         </button>
       </div>
 
       <div class="panel">
         <h2>Questions or Assistance?</h2>
-        <p>CASE national can assist with legislative positions,
-        campaign requests, and technical questions.</p>
-        <a href="https://www.casecec.org/">Visit CASE</a>
+
+        <p>
+          CASE national can assist with legislative positions,
+          campaign requests, and technical questions.
+        </p>
+
+        <a href="https://www.casecec.org/">
+          Visit CASE
+        </a>
       </div>
+
     </div>
   </section>
 
+  <!-- EDIT STATE PAGE -->
+
   <section id="edit" class="section">
-    <button class="back" data-page="home">← Back to Dashboard</button>
+
+    <button class="back"
+      onclick="showPage('home')">
+      ← Back to Dashboard
+    </button>
+
     <div class="panel">
+
       <h2>Edit Your State Advocacy Page</h2>
-      <p>Update general content for your state's public page.</p>
+
+      <p>
+        Update the general content for your state's
+        public advocacy page.
+      </p>
+
       <div class="notice">
-        <strong>Publish directly:</strong> General priorities,
-        informational updates, and contacts. Official positions
-        on specific bills and legislative calls to action
-        require national review.
+        <strong>Publish directly:</strong>
+        General priorities, informational updates,
+        and contacts. Official positions on specific bills
+        and legislative calls to action require national review.
       </div>
 
       <form id="state-form">
+
         <div class="field">
           <label for="intro">Welcome Message</label>
           <textarea id="intro" required></textarea>
         </div>
+
         <div class="field">
-          <label for="priorities">State Advocacy Priorities</label>
+          <label for="priorities">
+            State Advocacy Priorities
+          </label>
+
           <textarea id="priorities" required></textarea>
-          <div class="help">Describe general policy goals, not endorsements of specific bills.</div>
+
+          <div class="help">
+            Describe general policy goals rather than
+            endorsements of specific legislation.
+          </div>
         </div>
+
         <div class="field">
-          <label for="news">News and Announcements</label>
+          <label for="news">
+            News and Announcements
+          </label>
+
           <textarea id="news"></textarea>
         </div>
+
         <div class="field">
-          <label for="contact">Public State Advocacy Contact</label>
-          <input id="contact">
+          <label for="contact">
+            Public State Advocacy Contact
+          </label>
+
+          <input id="contact" type="text">
         </div>
+
         <div class="actions">
-          <button class="btn" type="submit">Publish Routine Updates</button>
-          <button class="btn outline" type="button" data-page="preview">
+
+          <button class="btn" type="submit">
+            Publish Routine Updates
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline"
+            onclick="showPage('preview')">
             Preview Public Page
           </button>
+
         </div>
+
       </form>
     </div>
   </section>
 
+  <!-- EVENTS AND RESOURCES -->
+
   <section id="resources" class="section">
-    <button class="back" data-page="home">← Back to Dashboard</button>
+
+    <button class="back"
+      onclick="showPage('home')">
+      ← Back to Dashboard
+    </button>
+
     <div class="panel">
+
       <h2>Events and Resources</h2>
-      <p>Share informational resources and state unit events.</p>
+
+      <p>
+        Share informational resources and state unit events.
+      </p>
+
       <div class="notice">
-        Legislative action alerts and requests to contact policymakers
-        must go through national approval.
+        Legislative action alerts and requests to
+        contact policymakers must go through national approval.
       </div>
+
       <form id="resource-form">
+
         <div class="field">
           <label for="kind">Content Type</label>
+
           <select id="kind">
             <option>Event</option>
             <option>Training</option>
@@ -347,43 +660,86 @@ footer {
             <option>Announcement</option>
           </select>
         </div>
+
         <div class="field">
           <label for="resource-title">Title</label>
           <input id="resource-title" required>
         </div>
+
         <div class="field">
           <label for="resource-desc">Description</label>
           <textarea id="resource-desc" required></textarea>
         </div>
+
         <div class="field">
-          <label for="resource-link">Optional Link</label>
-          <input type="url" id="resource-link" placeholder="https://">
+          <label for="resource-link">
+            Optional Link
+          </label>
+
+          <input
+            type="url"
+            id="resource-link"
+            placeholder="https://">
         </div>
-        <button class="btn" type="submit">Publish Resource</button>
+
+        <button class="btn" type="submit">
+          Publish Resource
+        </button>
+
       </form>
     </div>
   </section>
 
+  <!-- LEGISLATIVE POSITIONS -->
+
   <section id="positions" class="section">
-    <button class="back" data-page="home">← Back to Dashboard</button>
+
+    <button class="back"
+      onclick="showPage('home')">
+      ← Back to Dashboard
+    </button>
+
     <div class="panel">
+
       <h2>Request a Legislative Position</h2>
-      <p>Send proposed state legislative positions for national review.</p>
+
+      <p>
+        Send proposed state legislative positions
+        to CASE national for review.
+      </p>
+
       <div class="notice">
         <strong>National approval required.</strong>
-        Submitting a request does not establish an official CASE position.
+        Submitting a request does not establish
+        an official CASE position.
       </div>
+
       <form id="position-form">
+
         <div class="field">
-          <label for="bill">Bill Number or Proposal</label>
-          <input id="bill" placeholder="e.g., HB 1234" required>
+          <label for="bill">
+            Bill Number or Proposal
+          </label>
+
+          <input
+            id="bill"
+            placeholder="e.g., HB 1234"
+            required>
         </div>
+
         <div class="field">
-          <label for="bill-name">Bill or Proposal Title</label>
+          <label for="bill-name">
+            Bill or Proposal Title
+          </label>
+
           <input id="bill-name" required>
         </div>
+
         <div class="field">
-          <label for="stance">Requested Position</label>
+          <label for="stance">
+            Requested Position
+          </label>
+
           <select id="stance">
             <option>Support</option>
             <option>Oppose</option>
@@ -391,40 +747,78 @@ footer {
             <option>Request Guidance</option>
           </select>
         </div>
+
         <div class="field">
-          <label for="reason">Rationale</label>
+          <label for="reason">
+            Rationale
+          </label>
+
           <textarea id="reason" required></textarea>
         </div>
+
         <div class="field">
-          <label for="position-date">Relevant Deadline</label>
+          <label for="position-date">
+            Relevant Deadline
+          </label>
+
           <input type="date" id="position-date">
         </div>
-        <button class="btn" type="submit">Submit for National Review</button>
+
+        <button class="btn" type="submit">
+          Submit for National Review
+        </button>
+
       </form>
     </div>
   </section>
 
+  <!-- GRASSROOTS CAMPAIGNS -->
+
   <section id="campaigns" class="section">
-    <button class="back" data-page="home">← Back to Dashboard</button>
+
+    <button class="back"
+      onclick="showPage('home')">
+      ← Back to Dashboard
+    </button>
+
     <div class="panel">
+
       <h2>Propose a Grassroots Campaign</h2>
-      <p>CASE national will review campaign language, targets,
-      and legislative positions before activation.</p>
+
+      <p>
+        CASE national will review campaign language,
+        targets, and legislative positions
+        before activation.
+      </p>
+
       <div class="notice">
         <strong>National approval required.</strong>
         This form does not activate a campaign in Quorum.
       </div>
+
       <form id="campaign-form">
+
         <div class="field">
-          <label for="campaign-title">Campaign Title</label>
+          <label for="campaign-title">
+            Campaign Title
+          </label>
+
           <input id="campaign-title" required>
         </div>
+
         <div class="field">
-          <label for="campaign-bill">Related Bill</label>
+          <label for="campaign-bill">
+            Related Bill
+          </label>
+
           <input id="campaign-bill">
         </div>
+
         <div class="field">
-          <label for="campaign-type">Requested Action</label>
+          <label for="campaign-type">
+            Requested Action
+          </label>
+
           <select id="campaign-type">
             <option>Contact State Legislators</option>
             <option>Contact the Governor</option>
@@ -432,78 +826,146 @@ footer {
             <option>Other</option>
           </select>
         </div>
+
         <div class="field">
-          <label for="campaign-detail">Description and Rationale</label>
-          <textarea id="campaign-detail" required></textarea>
+          <label for="campaign-detail">
+            Description and Rationale
+          </label>
+
+          <textarea
+            id="campaign-detail"
+            required></textarea>
         </div>
+
         <div class="field">
-          <label for="campaign-date">Requested Launch Date</label>
+          <label for="campaign-date">
+            Requested Launch Date
+          </label>
+
           <input type="date" id="campaign-date">
         </div>
-        <button class="btn" type="submit">Submit Campaign for Review</button>
+
+        <button class="btn" type="submit">
+          Submit Campaign for Review
+        </button>
+
       </form>
     </div>
   </section>
 
+  <!-- REQUEST TRACKER -->
+
   <section id="requests" class="section">
-    <button class="back" data-page="home">← Back to Dashboard</button>
+
+    <button class="back"
+      onclick="showPage('home')">
+      ← Back to Dashboard
+    </button>
+
     <div class="panel">
+
       <h2>Requests for CASE National</h2>
-      <p>Track requests submitted in this demonstration.</p>
+
+      <p>
+        Track requests submitted through this demonstration.
+      </p>
+
       <ul id="request-list" class="entries"></ul>
+
     </div>
   </section>
 
+  <!-- PUBLIC PAGE PREVIEW -->
+
   <section id="preview" class="section">
-    <button class="back" data-page="home">← Back to Dashboard</button>
+
+    <button class="back"
+      onclick="showPage('home')">
+      ← Back to Dashboard
+    </button>
+
     <div class="panel">
+
       <h2>Preview Your Public State Page</h2>
-      <p>This shows routine state content. Approved Quorum campaigns
-      would appear separately.</p>
+
+      <p>
+        This shows routine state content.
+        Approved Quorum campaigns would appear separately.
+      </p>
+
       <div class="preview-head">
-        <div class="eyebrow">CASE Legislative Action Center</div>
+
+        <div class="eyebrow">
+          CASE Legislative Action Center
+        </div>
+
         <h3>Illinois State Advocacy</h3>
-        <div>Information, resources, and opportunities
-        for special education leaders</div>
+
+        <div>
+          Information, resources, and opportunities
+          for special education leaders
+        </div>
+
       </div>
+
       <div class="preview-body">
+
         <h4>Welcome</h4>
         <p id="pv-intro" class="preserve"></p>
+
         <h4>Advocacy Priorities</h4>
         <p id="pv-priorities" class="preserve"></p>
+
         <h4>News and Announcements</h4>
         <p id="pv-news" class="preserve"></p>
+
         <h4>Events and Resources</h4>
         <div id="pv-resources"></div>
+
         <h4>Take Action</h4>
-        <p>CASE-approved grassroots campaigns will appear here
-        after activation in Quorum.</p>
+        <p>
+          CASE-approved grassroots campaigns will appear here
+          after activation in Quorum.
+        </p>
+
         <h4>State Advocacy Contact</h4>
         <p id="pv-contact" class="preserve"></p>
+
       </div>
     </div>
   </section>
 
   <div id="feedback" role="status" aria-live="polite"></div>
-  <div class="panel" style="font-size:12px;color:var(--muted)">
-    <strong>Prototype only.</strong> Changes are saved in this browser.
-    There is no authentication, live publishing, national approval
-    system, or Quorum integration. Production approval rules must
-    be enforced on a secure server.
+
+  <div class="panel" style="font-size:12px;color:#617080">
+    <strong>Prototype only.</strong>
+    Changes are saved in this browser.
+    There is no authentication, live publishing,
+    national approval system, or Quorum integration.
+    Production permissions and approval rules
+    must be enforced on a secure server.
   </div>
+
 </main>
 
 <footer>
-  Council of Administrators of Special Education (CASE)<br>
+  Council of Administrators of Special Education (CASE)
+  <br>
   State Advocacy Management Portal
 </footer>
 
 <script>
+"use strict";
+
 const KEY = "case-state-portal-demo";
+
 const defaults = {
   state: {
     intro: "Welcome to our state advocacy page.",
-    priorities: "Strengthening the special education workforce\nImproving access to related services\nSupporting effective IDEA implementation",
+    priorities:
+      "Strengthening the special education workforce\n" +
+      "Improving access to related services\n" +
+      "Supporting effective IDEA implementation",
     news: "State updates will appear here.",
     contact: "State Advocacy Leadership"
   },
@@ -513,13 +975,25 @@ const defaults = {
 
 function load() {
   try {
-    const x = JSON.parse(localStorage.getItem(KEY));
-    if (x && x.state && Array.isArray(x.resources) &&
-        Array.isArray(x.requests)) return x;
-  } catch(e) {}
+    const saved = JSON.parse(localStorage.getItem(KEY));
+
+    if (
+      saved &&
+      saved.state &&
+      Array.isArray(saved.resources) &&
+      Array.isArray(saved.requests)
+    ) {
+      return saved;
+    }
+  } catch (error) {
+    console.warn("Could not load demo data.", error);
+  }
+
   return JSON.parse(JSON.stringify(defaults));
 }
+
 let data = load();
+
 const $ = id => document.getElementById(id);
 const val = id => $(id).value.trim();
 
@@ -527,42 +1001,67 @@ function save() {
   localStorage.setItem(KEY, JSON.stringify(data));
   refresh();
 }
+
 function make(tag, text) {
-  const e = document.createElement(tag);
-  e.textContent = text;
-  return e;
+  const element = document.createElement(tag);
+  element.textContent = text;
+  return element;
 }
-function page(id) {
-  document.querySelectorAll(".section").forEach(s => {
-    s.classList.toggle("active", s.id === id);
+
+function showPage(id) {
+  document.querySelectorAll(".section").forEach(section => {
+    section.classList.toggle("active", section.id === id);
   });
+
   refresh();
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
-document.querySelectorAll("[data-page]").forEach(b => {
-  b.addEventListener("click", () => page(b.dataset.page));
-});
+
 function message(text) {
   const box = $("feedback");
+
   box.replaceChildren();
-  const n = make("div", text);
-  n.className = "notice";
-  box.append(n);
-  box.scrollIntoView({behavior:"smooth",block:"nearest"});
+
+  const notice = make("div", text);
+  notice.className = "notice";
+
+  box.append(notice);
+
+  box.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
 }
 
 function refresh() {
   const pending = data.requests.length;
+
   $("pending-summary").textContent = pending
     ? pending + " request(s) awaiting national review."
     : "No requests pending.";
 
-  const list = $("request-list");
-  list.replaceChildren();
-  if (!pending) list.append(make("li","No requests submitted."));
-  data.requests.forEach(r => {
-    list.append(make("li",r.type + ": " + r.title +
-      " — Pending National Review"));
+  const requestList = $("request-list");
+  requestList.replaceChildren();
+
+  if (!pending) {
+    requestList.append(
+      make("li", "No requests submitted.")
+    );
+  }
+
+  data.requests.forEach(request => {
+    requestList.append(
+      make(
+        "li",
+        request.type + ": " +
+        request.title +
+        " — Pending National Review"
+      )
+    );
   });
 
   $("pv-intro").textContent = data.state.intro;
@@ -570,81 +1069,142 @@ function refresh() {
   $("pv-news").textContent = data.state.news;
   $("pv-contact").textContent = data.state.contact;
 
-  const resources = $("pv-resources");
-  resources.replaceChildren();
+  const resourceContainer = $("pv-resources");
+  resourceContainer.replaceChildren();
+
   if (!data.resources.length) {
-    resources.append(make("p","No resources posted yet."));
+    resourceContainer.append(
+      make("p", "No resources posted yet.")
+    );
   }
-  data.resources.forEach(r => {
+
+  data.resources.forEach(resource => {
     const item = document.createElement("div");
-    item.append(make("strong",r.title + " (" + r.kind + ")"),
-      make("p",r.description));
-    if (r.url) {
+
+    item.append(
+      make(
+        "strong",
+        resource.title + " (" + resource.kind + ")"
+      ),
+      make("p", resource.description)
+    );
+
+    if (resource.url) {
       try {
-        const url = new URL(r.url);
-        if (["https:","http:"].includes(url.protocol)) {
-          const a = make("a","View resource");
-          a.href = url.href;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          item.append(a);
+        const url = new URL(resource.url);
+
+        if (
+          url.protocol === "https:" ||
+          url.protocol === "http:"
+        ) {
+          const link = make("a", "View resource");
+
+          link.href = url.href;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+
+          item.append(link);
         }
-      } catch(e) {}
+      } catch (error) {
+        // Ignore invalid resource URLs.
+      }
     }
-    resources.append(item);
+
+    resourceContainer.append(item);
   });
 }
 
-["intro","priorities","news","contact"].forEach(id => {
+/* POPULATE EDITING FIELDS */
+
+["intro", "priorities", "news", "contact"].forEach(id => {
   $(id).value = data.state[id];
 });
 
-$("state-form").addEventListener("submit", e => {
-  e.preventDefault();
-  // This prototype does not reliably detect restricted content.
-  // A production application needs server-side review controls.
+/* SAVE STATE PAGE */
+
+$("state-form").addEventListener("submit", event => {
+  event.preventDefault();
+
+  // Demonstration only. In production, restricted content
+  // must be identified and controlled server-side.
+
   data.state = {
-    intro:val("intro"),
-    priorities:val("priorities"),
-    news:val("news"),
-    contact:val("contact")
+    intro: val("intro"),
+    priorities: val("priorities"),
+    news: val("news"),
+    contact: val("contact")
   };
+
   save();
+
   message("Demo state page updated locally.");
 });
 
-$("resource-form").addEventListener("submit", e => {
-  e.preventDefault();
+/* ADD RESOURCE */
+
+$("resource-form").addEventListener("submit", event => {
+  event.preventDefault();
+
   data.resources.unshift({
-    kind:val("kind"),
-    title:val("resource-title"),
-    description:val("resource-desc"),
-    url:val("resource-link")
+    kind: val("kind"),
+    title: val("resource-title"),
+    description: val("resource-desc"),
+    url: val("resource-link")
   });
+
   save();
-  e.target.reset();
+
+  event.target.reset();
+
   message("Resource added to the local demo page.");
 });
 
-function request(type,title) {
-  data.requests.unshift({type,title});
+/* NATIONAL APPROVAL REQUESTS */
+
+function submitRequest(type, title) {
+  data.requests.unshift({
+    type: type,
+    title: title,
+    status: "Pending National Review",
+    submitted: new Date().toISOString()
+  });
+
   save();
-  message("Request saved locally as pending national review. It has not been sent to CASE.");
+
+  message(
+    "Request saved locally as pending national review. " +
+    "It has not been sent to CASE national."
+  );
 }
 
-$("position-form").addEventListener("submit", e => {
-  e.preventDefault();
-  request("Legislative Position",val("bill")+" — "+val("bill-name"));
-  e.target.reset();
+/* LEGISLATIVE POSITION REQUEST */
+
+$("position-form").addEventListener("submit", event => {
+  event.preventDefault();
+
+  submitRequest(
+    "Legislative Position",
+    val("bill") + " — " + val("bill-name")
+  );
+
+  event.target.reset();
 });
 
-$("campaign-form").addEventListener("submit", e => {
-  e.preventDefault();
-  request("Grassroots Campaign",val("campaign-title"));
-  e.target.reset();
+/* GRASSROOTS CAMPAIGN REQUEST */
+
+$("campaign-form").addEventListener("submit", event => {
+  event.preventDefault();
+
+  submitRequest(
+    "Grassroots Campaign",
+    val("campaign-title")
+  );
+
+  event.target.reset();
 });
 
 refresh();
 </script>
+
 </body>
 </html>
